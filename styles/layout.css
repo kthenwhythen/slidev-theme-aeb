@@ -1,0 +1,148 @@
+:root {
+  // default theme color
+  // can be overrided by uses `themeConfig` option
+  --slidev-theme-primary: #ffffff;
+}
+
+/* Layouts */
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid;
+
+  h1 {
+    @apply text-6xl leading-20;
+  }
+
+  h1 + p {
+    @apply -mt-2 opacity-50 mb-4;
+  }
+
+  p + h2,
+  ul + h2,
+  table + h2 {
+    @apply mt-10;
+  }
+}
+
+.slidev-layout.title {
+  @apply h-full;
+
+  h1 {
+    @apply text-6xl font-900 opacity-90;
+  }
+
+  p {
+    @apply text-secondary;
+  }
+}
+
+.slidev-layout.intro {
+  @apply h-full;
+
+  h1 {
+    @apply text-6xl font-900 opacity-90;
+  }
+
+  p {
+    @apply text-secondary text-base font-normal;
+  }
+}
+
+.slidev-layout.content {
+  @apply h-full;
+
+  h1 {
+    @apply text-6xl font-900 opacity-90;
+  }
+
+  p {
+    @apply text-secondary;
+  }
+}
+
+.slidev-layout.thanks {
+  @apply h-full mt-6;
+
+  h1 {
+    @apply text-6xl font-900 opacity-90;
+  }
+
+  p {
+    @apply text-secondary;
+  }
+}
+
+/* Animations */
+
+.slidev-vclick-target {
+  transition: opacity 250ms ease-in-out;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* General components */
+
+.separator {
+  @apply bg-white opacity-30 h-px w-full block my-3;
+}
+
+.polygon {
+  width: fit-content;
+}
+
+/* Light components */
+
+html.light {
+  .sidebar {
+    @apply bg-white w-16 flex justify-center;
+
+    .wrap {
+      @apply w-6 grid h-12 mt-6;
+
+      .icon {
+        @apply flex justify-center mb-1 text-primary;
+      }
+
+      .title {
+        @apply write-vertical-right text-xl text-primary font-400;
+      }
+    }
+  }
+
+  .polygons {
+    .polygon-path {
+      opacity: 0.3;
+      fill: #55beea;
+    }
+  }
+}
+
+/* Dark components */
+
+html.dark {
+  .sidebar {
+    @apply bg-primary w-16 flex justify-center;
+
+    .wrap {
+      @apply w-6 grid h-12 mt-6;
+
+      .icon {
+        @apply flex justify-center mb-1 fill-red-500;
+      }
+
+      .title {
+        @apply write-vertical-right text-xl text-white font-400;
+      }
+    }
+  }
+
+  .polygons {
+    .polygon-path {
+      fill: #323846;
+    }
+  }
+}
